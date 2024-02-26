@@ -10,9 +10,26 @@
 body{
     background-color: aquamarine;
 }
+h1 {
+    color: #11101b;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 40px;
+    text-transform: uppercase;
+}
+.body_contaire{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("/src/logos/pictureBody2.png");
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+/*-----------------------------------------------------------------*/
+/*-------------------Mises en style de la bare de navigation -------------------*/
 header{
     width: 100%;
-    height: 80px;
+    height: 100px;
     background: #11101b;
     display: flex;
     align-items: center;
@@ -100,3 +117,87 @@ header{
         
     }
 }
+/*-----------------------Fin du Mises en style de la bare de navigation------- */
+/*-----------------------Debut du Mises en style du pieds de page------- */
+footer {
+    background: #11101b;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    
+}
+.Social_Links{
+    display: flex;
+    justify-content: center;
+    
+}
+.Social_Links a{
+    text-decoration: none;
+    padding: 20px;
+    margin: 20px;
+    background: #fefefe;
+    border-radius: 50%;
+}
+.Social_Links a i{
+    font-size: 2em;
+    color: #11101b;
+    opacity: 0.9;
+}
+.Social_Links a:hover{
+    background: #11101b;
+    transition: 0.5s;
+}
+.Social_Links a:hover i{
+    color: #fefefe;
+    transition: 0.5s;
+}
+.footer_Nav{
+    margin: 30px 0;
+}
+.footer_Nav ul {
+    display: flex;
+    justify-content: center;
+}
+.footer_Nav ul li a{
+    color: #fefefe;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    
+}
+.footer_Nav ul li a:hover{
+    opacity: 1;
+}
+.footer_Copyright{
+    background: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footer_Copyright p{
+    color: #fefefe;
+}
+.Copyright{
+    opacity: 0.7;
+    text-decoration: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media only screen and (max-width: 700px) {
+    .footer{
+        flex-direction: column;
+        height: 300px;
+    }
+    .footer_Nav ul li{
+        width: 100%;        
+        text-align: center;
+        margin: 10px;
+    }
+    .footer_Nav ul {
+        flex-direction: column;
+    }
+}
+/*-----------------------Fin du Mises en style du pieds de pages------- */

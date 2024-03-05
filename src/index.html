@@ -2,71 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Projet_RC6</title>
+    <title>LocaVroom</title>
+    <!-- ..................Custom Css Link................... -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- ..................FontAwesome Link................... -->
+    <link rel="stylesheet" href="./fontawesome-free-6.4.0-web/css/all.css">
 </head>
 <body>
-    
-    <header>
-        <div class="logo">Edells & Maslak</div>
-        <div class="hamburger">
-            <div class="line">___</div>
-            <div class="line">___</div>
-            <div class="line">___</div>
-        </div>
-        <div class="nav_bar">
-            <ul>
-                <li>
-                    <a href="" class="active"> Accuel </a>
-                </li>
-               <li>
-                    <a href="">Comparer les tarifs</a>
-                </li>
-                <li>
-                    <a href=""> Calculateur de trajets</a>
-                </li>
-                <li>
-                    <a href=""> Graphiques</a>
-                </li>
-                <li>
-                    <a href=""> Mon Compte</a>
-                </li>
-                
-            </ul>
-        </div>
-    </header>
-    <section class="body_contaire">
-        <div>
-             <h1>Location des voitures avec <br> les meilleurs prix </h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, aperiam delectus nesciunt rem atque vitae necessitatibus, architecto quaerat iusto minus earum quas quisquam, repellat iure. Et iure quisquam sapiente nam.
-            Nemo dolore iste, expedita exercitationem nisi, quo possimus nesciunt, numquam quaerat tempore temporibus ullam atque quidem fugiat voluptatibus molestiae assumenda sed officiis optio delectus odio explicabo sunt ratione voluptatem! Incidunt!
-            is eveniet cum nulla voluptatibus animi voluptatem quae aliquid nobis officia incidunt eos quia dolor eius, explicabo neque facilis vel maxime? Voluptatum dolorem vero corrupti libero repellendus.
-            Cum veniam amet sed optio maxime nostrum voluptas nihil omnis perspiciatis magnam tempore temporibus quos molestiae minima, cumque voluptatum unde iste exercitationem, voluptatibus eligendi id praesentium qui vel explicabo. Quisquam!
-            Consequatur cumque facere omnis quibusdam porro saepe accusamus laboriosam modi magni ex sed, illum ducimus aspernatur earum quam aperiam natus repudiandae doloremque? Amet omnis vel odio similique beatae, a eveniet.</p>
-        </div>
-    </section>
-    <footer class="footer">
-                <div class="Social_Links">
-                     <a href="#"><i class="fab fa-facebook-f"></i></a> 
-                     <a href="#"><i class="fab fa-instagram"></i></a> 
-                      <a href="#"><i class="fab fa-linkedin-in"></i></a> 
-                </div> 
-                <div class="footer_Nav">
-                    <ul>
-                        <li> <a href="#">Accuel </a> </li> 
-                        <li> <a href="#">Langue </a> </li> 
-                        <li> <a href="#">Contact</a> </li> 
-                        
-                     </ul>
+        <!-- ..................Start Navbar................... -->
+        <nav>
+            <div class="container nav-container">
+                <a href="" class="logo"><h3>LocaVroom.fr </h3></a>
+                <ul class="nav-link">
+                    <li><a href="index.html" style="--i:1;" class="active">Accueil</a></li>
+                    <li><a href="" style="--i:2;">Comparer les tarifs</a></li>
+                    <li><a href="" style="--i:5;">Calculateur de trajets</a></li>
+                    <li><a href="" style="--i:5;">Mon compte</a></li>
+                </ul>
+                <ul class="social-link">
+                    <li><a href="" style="--i:1;"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="" style="--i:2;"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="" style="--i:3;"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- ..................End Navbar................... -->
+
+
+        <!-- ..................Start Header Section................... -->
+        <header>
+            <div class="container header-container">
+                <div class="header-left">
+                    <h1>Votre clé pour des voyages sans Tracas:</h1>
+                    <h3>-Comparez, Réserver, Roulez</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis est illo <br> nisi  magni ea distinctio ab quibusdam rem qui ex? Quisquam ipsum quaear <br> sint eos alias rem sequi repellendus culpa?
+                    </p>
+                    <a href="calculatorPage.html"><button class="btn">>Je simule!</button></a>
+
                 </div>
-                <div class="footer_Copyright">
-                    <p>Copyright &copy;2024; Designed by <span class="Copyright">Edells & Maslak</span></p>
+                <div class="header-right">
+                    <div class="sq-box">
+                        <img src="/src/logos/car.png" alt="">
+                    </div>
                 </div>
-    </footer>
-    <script type="module" src="/src/script.js"></script>
+            </div>
+            <div class="sq-box2"></div>
+        </header>
+        <!-- ..................End Header Section................... -->
+        <div class="footer_Copyright">
+            <p>Copyright &copy;2024; Designed by <span class="Copyright">Edells & Maslak</span></p>
+        </div>
 </body>
 </html>
-
-  

@@ -1,3 +1,6 @@
+/**
+ * Amadou js
+ */
 const hamburger = document.querySelector('.hamburger');
 const nav_bar = document.querySelector('.nav_bar');
 const wrapper = document.querySelector('.wrapper');
@@ -36,3 +39,8 @@ btn_login.addEventListener('click', () =>{
 icon_close.addEventListener('click', () =>{
     wrapper.classList.remove('active-popup');
 });
+
+/**
+ * Amadou Fin JS
+ */
+

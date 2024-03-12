@@ -5,55 +5,284 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LocaVroom</title>
-    <!-- ..................Custom Css Link................... -->
     <link rel="stylesheet" href="./style.css">
-    <!-- ..................FontAwesome Link................... -->
-    <link rel="stylesheet" href="./fontawesome-free-6.4.0-web/css/all.css">
 </head>
 <body>
-        <!-- ..................Start Navbar................... -->
-        <nav>
-            <div class="container nav-container">
-                <a href="" class="logo"><h3>LocaVroom.fr </h3></a>
-                <ul class="nav-link">
-                    <li><a href="index.html" style="--i:1;" class="active">Accueil</a></li>
-                    <li><a href="" style="--i:2;">Comparer les tarifs</a></li>
-                    <li><a href="" style="--i:5;">Calculateur de trajets</a></li>
-                    <li><a href="" style="--i:5;">Mon compte</a></li>
-                </ul>
-                <ul class="social-link">
-                    <li><a href="" style="--i:1;"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="" style="--i:2;"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="" style="--i:3;"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- ..................End Navbar................... -->
-
-
-        <!-- ..................Start Header Section................... -->
+    <nav>
+        <div class="logo">Edells & Maslak</div>
+    <div class="hamburger">
+        <div class="line">___</div>
+        <div class="line">___</div>
+        <div class="line">___</div>
+    </div>
+    <div class="nav_bar">
+        <ul>
+            <li>
+                <a href="" class="active"> Accuel </a>
+            </li>
+           <li>
+                <a href="">Comparer les tarifs</a>
+            </li>
+            <li>
+                <a href=""> Calculateur de trajets</a>
+            </li>
+            <li>
+                <a href=""> Graphiques</a>
+            </li>
+            <li>
+                <a href="MonCompte.html"> Mon Compte</a>
+                <!--
+                <button>Mon Compte</button>
+                -->
+            </li>
+            
+        </ul>
+    </div>
+        <!--<div class="container nav-container">
+            <a href="" class="logo"><h3>Edells & Maslak </h3></a>
+            <ul class="nav-link">
+                <li><a href="index.html" style="--i:1;" class="active">Accueil</a></li>
+                <li><a href="" style="--i:2;">Comparer les tarifs</a></li>
+                <li><a href="" style="--i:5;">Calculateur de trajets</a></li>
+                <li><a href="./MonCompte.html" style="--i:5;">Mon compte</a></li>
+            </ul>
+            <ul class="social-link">
+                <li><a href="" style="--i:1;">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+                <li><a href="" style="--i:2;"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="" style="--i:3;"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>-->
+    </nav>
         <header>
-            <div class="container header-container">
-                <div class="header-left">
-                    <h1>Votre clé pour des voyages sans Tracas:</h1>
-                    <h3>-Comparez, Réserver, Roulez</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis est illo <br> nisi  magni ea distinctio ab quibusdam rem qui ex? Quisquam ipsum quaear <br> sint eos alias rem sequi repellendus culpa?
-                    </p>
-                    <a href="calculatorPage.html"><button class="btn">>Je simule!</button></a>
+        
+        <div class="container header-container">
+            <div class="header-left">
+                <h1>Votre clé pour des voyages sans Tracas:</h1>
+                <h3>-Comparez, Réserver, Roulez</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis est illo <br> nisi  magni ea distinctio ab quibusdam rem qui ex? Quisquam ipsum quaear <br> sint eos alias rem sequi repellendus culpa?
+                </p>
+                <div>
+                    <div class="container">
+                        <div class="location-input">
+                            <div class="search-box">
+                                <div class="icon">
+                                    <input type="text" class="input-field" value="Lyon, Métropole de Lyon, France" placeholder="De…">
+        
+                                </div>
+                            </div>
+                        <div class="date-time-input">
+                                <div class="start-date">
+                                    <input type="date" class="input-date">
+                                </div>
+                                <div class="start-time">
+                                    <div class="display">
+                                        Midi
+                                    </div>
+                                </div>
+                                <div class="separator"></div>
+                                <div class="end-date">
+                                    <input type="date" class="input-date">
+                                </div>
+                            <div class="time-picker">
+                                <div class="end-time">
+                                    <div class="display">
+                                        Midi
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    </div>
+                    
                 </div>
-                <div class="header-right">
-                    <div class="sq-box">
-                        <img src="/src/logos/car.png" alt="">
+                <a href="calculatorPage.html"><button class="btn">>Je simule!</button></a>
+
+            </div>
+            <div class="header-right">
+                <div class="sq-box">
+                    <img src="/src/logos/car.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="sq-box2"></div>
+        </header>
+        
+        
+        <section class="sec">
+            <h1>Ce que Edells & Maslak vous propose :</h1>
+            <div class="mes_Carte">
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="/src/logos/car-s.png" alt="Voiture">  
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title-description">
+                            <h5 class="card-title">Les meilleures offres de voitures</h5>
+                            <span>Consultez les offres d’agences de location dans plus de 70&nbsp;000&nbsp;emplacements.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="/src/logos/car-s.png" alt="Voiture">  
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title-description">
+                            <h5 class="card-title">Réservation flexible</h5>
+                            <span>Trouvez une voiture avec annulation gratuite et nettoyage amélioré.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="/src/logos/car-s.png" alt="Voiture">  
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title-description">
+                            <h5 class="card-title">Transparence des prix</h5>
+                            <span>Visualisez le prix total pour éviter les surprises.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image-container">
+                        <img src="/src/logos/car-s.png" alt="Voiture">  
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title-description">
+                            <h5 class="card-title">Options écologiques</h5>
+                            <span>Filtrez votre recherche pour trouver facilement une voiture hybride ou électrique.</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--****************************************************************************-->
+            <div class="popular-destinations-header">
+                <h2 class="des-title">Destinations et locations de voiture populaires</h2>
+            </div>
+            
+            <div class="scroll-container">
+                <div class="navigation">
+                    <button type="button" disabled="" class="prev-button" aria-label="prev">
+                        <!-- Icon previous -->
+                        <ion-icon name="caret-back"></ion-icon>
+                    </button>
+                    <button type="button" class="next-button" aria-label="next">
+                        <!-- Icon next -->
+                        <ion-icon name="caret-forward"></ion-icon>
+                    </button>
+                </div>
+            </div>
+            
+                <div class="container">
+                    <!-- Card 1 -->
+                    <div class="card-destination">
+                        <a href="#" class="destination-link">
+                            <div class="destination-image">
+                                <div class="image-wrapper" style="height:0;padding-bottom:46.93877551020408%">
+                                    <img class="destination-img" alt="Barcelone&nbsp;: location de voiture" src="./logos/Large-London-England-Aug-2017-Brendan-van-Son-5.webp">
+                                </div>
+                            </div>
+                            <div class="destination-content">
+                                <div class="left-section">
+                                    <h3 class="destination-title">Londres&nbsp;: location de voiture</h3>
+                                    <p class="car-type-info">
+                                        <b>Type de voiture le plus populaire&nbsp;:</b> Économique
+                                    </p>
+                                </div>
+                                <div class="right-section">
+                                    <div class="price-info">
+                                        <div class="leading-info">
+                                            <span class="info-label">À partir de</span>
+                                        </div>
+                                        <div class="price-details">
+                                            <span class="price-amount">16 €</span>
+                                            <span class="price-unit">par jour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            
+                    <!-- Card 2 -->
+                    <div class="card-destination">
+                        <a href="#" class="destination-link">
+                            <div class="destination-image">
+                                <div class="image-wrapper" style="height:0;padding-bottom:46.93877551020408%">
+                                    <img class="destination-img" alt="Barcelone&nbsp;: location de voiture" src="./logos/madrid.webp">
+                                </div>
+                            </div>
+                            <div class="destination-content">
+                                <div class="left-section">
+                                    <h3 class="destination-title">Madrid&nbsp;: location de voiture</h3>
+                                    <p class="car-type-info">
+                                        <b>Type de voiture le plus populaire&nbsp;:</b> Compacte
+                                    </p>
+                                </div>
+                                <div class="right-section">
+                                    <div class="price-info">
+                                        <div class="leading-info">
+                                            <span class="info-label">À partir de</span>
+                                        </div>
+                                        <div class="price-details">
+                                            <span class="price-amount">12 €</span>
+                                            <span class="price-unit">par jour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            
+                    <!-- Card 3 -->
+                    <div class="card-destination">
+                        <a href="#" class="destination-link">
+                            <div class="destination-image">
+                                <div class="image-wrapper" style="height:0;padding-bottom:46.93877551020408%">
+                                    <img class="destination-img" alt="Barcelone&nbsp;: location de voiture" src="./logos/GettyImages-149127892.webp">
+                                </div>
+                            </div>
+                            <div class="destination-content">
+                                <div class="left-section">
+                                    <h3 class="destination-title">Barcelone&nbsp;: location de voiture</h3>
+                                    <p class="car-type-info">
+                                        <b>Type de voiture le plus populaire&nbsp;:</b> Économique
+                                    </p>
+                                </div>
+                                <div class="right-section">
+                                    <div class="price-info">
+                                        <div class="leading-info">
+                                            <span class="info-label">À partir de</span>
+                                        </div>
+                                        <div class="price-details">
+                                            <span class="price-amount">11 €</span>
+                                            <span class="price-unit">par jour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="sq-box2"></div>
-        </header>
-        <!-- ..................End Header Section................... -->
-        <div class="footer_Copyright">
-            <p>Copyright &copy;2024; Designed by <span class="Copyright">Edells & Maslak</span></p>
-        </div>
+            
+        </section>
+        
+        <footer>
+            <div class="footer_Copyright">
+                <p>Copyright &copy;2024; Designed by <span class="Copyright">Edells & Maslak</span></p>
+            </div>
+        </footer>
+    <script type="module" src="./script.js"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
 </body>
 </html>

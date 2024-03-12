@@ -280,6 +280,8 @@ header{
     transform: rotate(45deg);
     right: -7%;   
 }
+
+/* le rectangle bleu */
 .sq-box{
     height: 100%;
     width: 100%;
@@ -289,7 +291,9 @@ header{
     opacity: 0;
     animation: zoomOut 1s ease forwards; 
     animation-delay: 1.3s;
-}
+} 
+
+/**voiture */
 .sq-box img{
     position: absolute;
     transform: rotate(-45deg);

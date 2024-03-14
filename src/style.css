@@ -85,7 +85,7 @@ nav_bar ul li button:hover{
 .nav_bar ul .btn_login{
     background-color: transparent;
     border: none;
-    color: #fefefe;
+   /* color: #fefefe;*/
     font-size: 20px;
     padding: 10px 25px;
     border-radius: 50px;
@@ -94,16 +94,16 @@ nav_bar ul li button:hover{
     cursor: pointer;
 }
 .nav_bar ul .btn_login:hover{
-    /* color: #11101b;
-   background: #fefefe;*/
+    color: #11101b;
+   background: #1743e3;
 }
 .nav_bar ul li a:hover{
-   /*color: #11101b;
-    background: #fefefe;*/
+   color: #11101b;
+    background: #1743e3
 }
 .nav_bar ul li a.active{
     color: #11101b;
-    background: #fefefe;
+    background: #1743e3
 }
 @media only screen and (max-width: 1320px) {
     header {
@@ -125,7 +125,7 @@ nav_bar ul li button:hover{
     .hamburger .line{
         width: 30px;
         height: 3px;
-        color: #fefefe;
+        /*color: #fefefe;*/
         margin: 6px 0;
     }
     .nav_bar{
@@ -235,6 +235,7 @@ header{
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding: 60px;
 }
 
 .header-left{
@@ -394,76 +395,9 @@ header{
 }
 
 /* .......................End Animation...................... */
-/**************************************************************/
-
-.container {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-}
-
-.location-input {
-    margin-bottom: 20px;
-    display: flex;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-}
-
-.icon {
-    margin-right: 10px;
-}
-
-.input-field {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    width: 350px;
-}
-.input-date{
-    width: 250px;
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #ccc;
-}
-
-.date-time-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.date-picker, .time-picker {
-    display: flex;
-    align-items: center;
-}
-
-.separator {
-    margin: 0 10px;
-    border: 1px solid #ccc;
-}
-
-.start-date, .end-date, .start-time, .end-time {
-    display: flex;
-    align-items: center;
-    
-}
-
-.display {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    cursor: pointer;
-}
 
 
-/***************************************************************/
+/*************************Mise en style de la section**************************************/
 /* Styles de base */
 .sec {
     padding: 50px;
@@ -542,10 +476,7 @@ header{
     }
 }
 
-
-/******************************************************************************/
-
-/* Styles généraux */
+/* Styles généraux sur les carte de destination */
 .popular-destinations-header {
     margin-bottom: 20px;
 }
@@ -672,6 +603,8 @@ header{
         width: calc(100% - 20px); /* À partir de 768px de large, chaque carte occupera la totalité de la largeur de l'écran */
     }
 }
+/***********************************fin de la mise en style de la setion sec *******************************************/
+
 
 /************************Mise en style de la page Mon Compte*************/
 #sec_mon_cmpt{

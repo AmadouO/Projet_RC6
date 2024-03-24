@@ -807,18 +807,25 @@ header{
     text-transform: uppercase;
 }
 
-body #overlay-simulator{
+body {
     margin-left: 0px;
-    color: black;
+    color: white;
     font-family: "Vista Sans", "Titillium Web", Arial, sans-serif;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: bold;
+
     animation: H1Ani forwards 1s ease;  
     animation-delay: 1s;
     position: relative;
+    background-image: url('logos/carComparateur.jpg');
+    background-size: cover; /* Couvrir toute la surface du conteneur */
+    background-position: center; /* Centrer l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Ne pas répéter l'image si le conteneur est plus grand */
 
 }
 body #overlay-simulator legend {
     font-size: 1.8em;
     padding-top: 50px;
+    font-weight: bold;
     color: #ee7723;
 }

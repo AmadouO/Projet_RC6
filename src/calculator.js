@@ -116,6 +116,10 @@ function displayPrice(totalPrice) {
     var outputElement = document.getElementById('estimate_price');
     outputElement.value = totalPrice.toFixed(2);
 }
+function displayPrice2(totalPrice) {
+    var outputElement = document.getElementById('estimate_price2');
+    outputElement.value = totalPrice.toFixed(2);
+}
 
 function calculateAndDisplayPrice() {
     var carSize = getCarSize();
@@ -124,7 +128,98 @@ function calculateAndDisplayPrice() {
     var distance = getDistance()
     displayPrice(price);
 }
-/********************ne pas toucher ************************************ */
+
+
+/**
+ * Maslak CalculatorPage JS citiz  FIN
+ */
+
+/**Maslak Calculator page pour Leo&Go */
+
+function calculatePriceLeoAndGo(carSize, rentalDurationInHours) {
+    var totalPrice;
+
+    // Utiliser un switch pour déterminer la taille de la voiture et calculer le prix en conséquence
+    switch (carSize) {
+        case '1':
+        case '2':
+        case '3':
+            switch (rentalDurationInHours) {
+                case 0.01667: // 1 minute
+                    totalPrice = 0.32;
+                    break;
+                case 0.5: // 30 minutes
+                    totalPrice = 7.5;
+                    break;
+                case 1:
+                    totalPrice = 13;
+                    break;
+                case 3:
+                    totalPrice = 27;
+                    break;
+                case 6:
+                    totalPrice = 42;
+                    break;
+                case 9:
+                    totalPrice = 53;
+                    break;
+                case 24:
+                    totalPrice = 65;
+                    break;
+                case 48:
+                    totalPrice = 119;
+                    break;
+                default:
+                    totalPrice = 0;
+                    break;
+            }
+            break;
+        case '4':
+            switch (rentalDurationInHours) {
+                case 0.01667: // 1 minute
+                    totalPrice = 0.39;
+                    break;
+                case 3:
+                    totalPrice = 39;
+                    break;
+                case 6:
+                    totalPrice = 59;
+                    break;
+                case 24:
+                    totalPrice = 79;
+                    break;
+                case 48:
+                    totalPrice = 149;
+                    break;
+                case 72:
+                    totalPrice = 209;
+                    break;
+                default:
+                    totalPrice = 0;
+                    break;
+            }
+            break;
+        default:
+            totalPrice = 0; // Si la taille de la voiture n'est pas valide, le prix est de 0
+            break;
+    }
+
+    return totalPrice;
+}
+function calculateAndDisplayPriceLeoGO() {
+    var carSize = getCarSize();
+    var rentalDurationInHours = getRentalDurationInHours();
+    var price;
+
+    // Vérifier si la voiture est de taille 'S', 'M' ou 'L'
+        price = calculatePriceLeoAndGo(carSize, rentalDurationInHours);
+
+    // Afficher le prix calculé
+    displayPrice(price);
+}
+
+
+
 
 // Fonction pour créer et ajouter un bouton au DOM
 function createCalculateButton() {
@@ -136,23 +231,43 @@ function createCalculateButton() {
     button.addEventListener('click', function(event) {
         // Empêcher le rechargement de la page
         event.preventDefault();
-        
         // Calculer le prix
         var price = calculatePrice(getCarSize(), getRentalDurationInHours());
-        
         // Afficher le prix directement dans le document
         displayPrice(price);
     });
-
     // Ajouter le bouton au DOM
     var container = document.getElementById('overlay-simulator-result');
     container.appendChild(button);
 }
-
 // Appel de la fonction pour créer et ajouter le bouton au chargement de la page
 window.addEventListener('load', createCalculateButton);
-/***************************************************************** */
 
-/**
- * Maslak CalculatorPage JS FIN
- */
+/**********************************************boutton leo&Go ************************** ***/ 
+// Fonction pour créer et ajouter un bouton au DOM
+function createCalculateButton2() {
+    // Créer un élément bouton
+    var button = document.createElement('button');
+    button.textContent = 'Afficher le prix';
+
+    // Ajouter un écouteur d'événements au bouton pour calculer le prix et l'afficher
+    button.addEventListener('click', function(event) {
+        // Empêcher le rechargement de la page
+        event.preventDefault();
+        
+        // Calculer le prix
+        var price = calculateAndDisplayPriceLeoGO(getCarSize(), getRentalDurationInHours());
+        
+        
+        // Afficher le prix directement dans le document
+        displayPrice(price);
+       
+    });
+
+    // Ajouter le bouton au DOM
+    var container2 = document.getElementById('overlay-simulator-result2');
+    container2.appendChild(button);
+}
+
+// Appel de la fonction pour créer et ajouter le bouton au chargement de la page
+window.addEventListener('load', createCalculateButton2);

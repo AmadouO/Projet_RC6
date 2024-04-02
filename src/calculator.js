@@ -130,12 +130,63 @@ function calculateAndDisplayPrice() {
 }
 
 
-/**
+/******************************************************************************
  * Maslak CalculatorPage JS citiz  FIN
- */
+ ******************************************************************************/
 
-/**Maslak Calculator page pour Leo&Go */
+/****************************** *
+ * Maslak Calculator page pour Leo&Go 
+************************************/
+function calculatePriceLeoAndGo2(carSize, rentalDurationInHours) {
+    var totalPrice = 0;
 
+    // Utiliser un switch pour déterminer la taille de la voiture et calculer le prix en conséquence
+    switch (carSize) {
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+            // Calculer le prix en fonction de la durée de location
+            if (rentalDurationInHours <= 1) {
+                totalPrice = 13;
+            } else if (rentalDurationInHours <= 2) {
+                totalPrice = 22;
+            } else if (rentalDurationInHours <= 3) {
+                totalPrice = 27;
+            } else if (rentalDurationInHours <= 6) {
+                totalPrice = 42;
+            } else if (rentalDurationInHours <= 24) {
+                totalPrice = 65;
+            } else if (rentalDurationInHours <= 48) {
+                totalPrice = 119;
+            } else {
+                // Calculer les jours et les heures restants
+                var days = Math.floor(rentalDurationInHours / 24);
+                var hours = rentalDurationInHours % 24;
+                
+                // Calculer le prix pour chaque jour
+                totalPrice += days * 65;
+                
+                // Calculer le prix pour les heures restantes
+                if (hours <= 1) {
+                    totalPrice += 13;
+                } else if (hours <= 2) {
+                    totalPrice += 22;
+                } else if (hours <= 3) {
+                    totalPrice += 27;
+                } else if (hours <= 6) {
+                    totalPrice += 42;
+                }
+            }
+            break;
+        default:
+            totalPrice = 0; // Si la taille de la voiture n'est pas valide, le prix est de 0
+            break;
+    }
+
+    return totalPrice;
+}
+/*
 function calculatePriceLeoAndGo(carSize, rentalDurationInHours) {
     var totalPrice;
 
@@ -205,20 +256,15 @@ function calculatePriceLeoAndGo(carSize, rentalDurationInHours) {
     }
 
     return totalPrice;
-}
-function calculateAndDisplayPriceLeoGO() {
+}*/
+/*function calculateAndDisplayPriceLeoGO() {
     var carSize = getCarSize();
     var rentalDurationInHours = getRentalDurationInHours();
-    var price;
-
-    // Vérifier si la voiture est de taille 'S', 'M' ou 'L'
-        price = calculatePriceLeoAndGo(carSize, rentalDurationInHours);
-
+    var price= calculatePriceLeoAndGo(carSize, rentalDurationInHours);
+    var distance = getDistance()
     // Afficher le prix calculé
     displayPrice(price);
-}
-
-
+}*/
 
 
 // Fonction pour créer et ajouter un bouton au DOM
@@ -256,12 +302,8 @@ function createCalculateButton2() {
         event.preventDefault();
         
         // Calculer le prix
-        var price = calculateAndDisplayPriceLeoGO(getCarSize(), getRentalDurationInHours());
-        
-        
-        // Afficher le prix directement dans le document
-        displayPrice(price);
-       
+        var price = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours());
+        displayPrice2(price);
     });
 
     // Ajouter le bouton au DOM

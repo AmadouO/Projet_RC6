@@ -797,23 +797,23 @@ header{
   }
   
 #HeaderSimulator {
-    color: #616060;
-    font-family: vista sans, titillium web, arial, sans-serif;
-    font-size: 25px;
+    color: #003b4d;
+    /*font-family: vista sans, titillium web, arial, sans-serif;*/
+    font-size: 40px;
     font-weight: bold;
     line-height: 27.5px;
     margin-bottom: 22px;
     margin-top: 0;
     text-transform: uppercase;
 }
-
+#overlay-simulator{
+    color: white;
+    font-family: Copperplate;
+    font-size: 20px;
+    
+}
 body {
     margin-left: 0px;
-    color: white;
-    font-family: "Vista Sans", "Titillium Web", Arial, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-
     animation: H1Ani forwards 1s ease;  
     animation-delay: 1s;
     position: relative;
@@ -825,7 +825,22 @@ body {
 }
 body #overlay-simulator legend {
     font-size: 1.8em;
+    font-family: Copperplate;
     padding-top: 50px;
     font-weight: bold;
-    color: #ee7723;
+    color: #1b00ce;
+}
+footer {
+    background-color: #5e6263; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte */
+    padding: 20px; /* Espace intérieur du footer */
+    text-align: center; /* Alignement du texte au centre */
+}
+
+.footer_Copyright {
+    font-size: 12px; /* Taille de police réduite */
+}
+
+.footer_Copyright .Copyright {
+    color: #37b9f5; /* Couleur du texte pour le nom de conception */
 }

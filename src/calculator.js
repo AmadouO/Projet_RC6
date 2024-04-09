@@ -313,3 +313,164 @@ function createCalculateButton2() {
 
 // Appel de la fonction pour créer et ajouter le bouton au chargement de la page
 window.addEventListener('load', createCalculateButton2);
+
+/*** Creation des courbes */
+
+// Créez une fonction pour afficher le graphique
+function afficherGraphique() {
+    var citizPrice = calculatePrice(getCarSize(), getRentalDurationInHours());
+    var leoGoPrice = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours());
+
+    // Contexte du graphique
+    var ctx = document.getElementById('priceComparisonChart').getContext('2d');
+
+    // Créer le graphique
+    var priceComparisonChart = new Chart(ctx, {
+        type: 'bar', // Type de graphique : barres
+        data: {
+            labels: ['Citiz', 'Leo&Go'], // Étiquettes des barres
+            datasets: [{
+                label: 'Prix de location de voiture', // Légende du graphique
+                data: [citizPrice, leoGoPrice], // Données des prix
+                backgroundColor: [ // Couleurs de fond des barres
+                'rgba(238, 130, 238, 0.2)', // Couleur pour Citiz (rose foncé)
+                'rgba(30, 144, 255, 0.2)' // Couleur pour Leo&Go (bleu foncé)
+            ],
+            borderColor: [ // Couleurs des bordures des barres
+                'rgba(238, 130, 238, 1)', // Couleur pour Citiz (rose foncé)
+                'rgba(30, 144, 255, 1)' // Couleur pour Leo&Go (bleu foncé)
+            ],
+                borderWidth: 1 // Largeur de bordure des barres
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true // Commencer l'axe y à 0
+                    }
+                }]
+            }
+        }
+    });
+
+    var recommendationParagraph = document.getElementById('recommendationParagraph');
+
+    // Recommander le prix le plus bas
+    var lowestPrice = Math.min(citizPrice, leoGoPrice);
+    if (lowestPrice === citizPrice) {
+        recommendationParagraph.textContent = 'Nous vous recommandons de choisir Citiz pour le prix le plus bas.';
+    } else {
+        recommendationParagraph.textContent = 'Nous vous recommandons de choisir Leo&Go pour le prix le plus bas.';
+    }
+}
+
+// Récupérez le bouton "Afficher"
+var refreshButton = document.getElementById('refreshButton');
+
+// Ajoutez un gestionnaire d'événements au bouton "Afficher"
+refreshButton.addEventListener('click', function(event) {
+    // Empêchez le comportement par défaut (rechargement de la page)
+    event.preventDefault();
+
+    // Appelez la fonction pour afficher le graphique
+    afficherGraphique();
+});
+
+
+// Sélectionnez le bouton de réinitialisation
+var resetButton = document.getElementById('resetButton');
+
+// Ajoutez un écouteur d'événements au bouton de réinitialisation
+resetButton.addEventListener('click', function() {
+    // Obtenez le contexte du graphique
+    var ctx = document.getElementById('priceComparisonChart').getContext('2d');
+
+    // Effacez le graphique actuel
+    if (window.priceComparisonChart !== undefined) {
+        window.priceComparisonChart.destroy();
+    }
+
+    // Recréez le graphique avec les données par défaut ou vides
+    window.priceComparisonChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: []
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    // Effacez également le paragraphe de recommandation
+    var recommendationParagraph = document.getElementById('recommendationParagraph');
+    recommendationParagraph.textContent = '';
+
+    // Ensuite, vous pouvez réinitialiser d'autres éléments de l'interface utilisateur si nécessaire
+});
+
+/*
+var citizPrice = calculatePrice(getCarSize(), getRentalDurationInHours()); 
+var leoGoPrice = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours())
+
+        // Contexte du graphique
+        var ctx = document.getElementById('priceComparisonChart').getContext('2d');
+
+        // Créer le graphique
+        var priceComparisonChart = new Chart(ctx, {
+            type: 'bar', // Type de graphique : barres
+            data: {
+                labels: ['Citiz', 'Leo&Go'], // Étiquettes des barres
+                datasets: [{
+                    label: 'Prix de location de voiture', // Légende du graphique
+                    data: [citizPrice, leoGoPrice], // Données des prix
+                    backgroundColor: [ // Couleurs de fond des barres
+                        'rgba(255, 99, 132, 0.2)', // Couleur pour Citiz
+                        'rgba(54, 162, 235, 0.2)' // Couleur pour Leo&Go
+                    ],
+                    borderColor: [ // Couleurs des bordures des barres
+                        'rgba(255, 99, 132, 1)', // Couleur pour Citiz
+                        'rgba(54, 162, 235, 1)' // Couleur pour Leo&Go
+                    ],
+                    borderWidth: 1 // Largeur de bordure des barres
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true // Commencer l'axe y à 0
+                        }
+                    }]
+                }
+            }
+        });
+
+        var recommendationParagraph = document.getElementById('recommendationParagraph');
+
+        // Recommander le prix le plus bas
+        var lowestPrice = Math.min(citizPrice, leoGoPrice);
+        if (lowestPrice === citizPrice) {
+            recommendationParagraph.textContent = 'Nous vous recommandons de choisir Citiz pour le prix le plus bas.';
+        } else {
+            recommendationParagraph.textContent = 'Nous vous recommandons de choisir Leo&Go pour le prix le plus bas.';
+        }
+
+      /*  var lowestPrice = Math.min(citizPrice, leoGoPrice);
+        if (lowestPrice === citizPrice) {
+            console.log('Nous vous recommandons de choisir Citiz pour le prix le plus bas.');
+        } else {
+            console.log('Nous vous recommandons de choisir Leo&Go pour le prix le plus bas.');
+        }
+
+        document.getElementById('refreshButton').addEventListener('click', function() {
+            window.location.reload();
+        });
+        */

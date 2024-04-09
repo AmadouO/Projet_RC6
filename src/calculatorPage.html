@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Inclure la bibliothèque Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>LocaVroom</title>
     <!-- ..................Custom Css Link................... -->
     <link rel="stylesheet" href="./style.css">
@@ -42,7 +45,7 @@
         </nav>
         <!-- ..................End Navbar................... -->
     </div>    
-        </header>
+        
          <!--choix de la taille du vehicule-->
          <div id="overlay-simulator">
             <h1 id="HeaderSimulator">Simulateur de tarif</h1>
@@ -125,8 +128,19 @@
             </fieldset>
 
 
-            </form>
-        <!-- ..................End Header Section................... -->
+            
+
+
+                <fieldset id="affichage">
+                    <legend>Graphique : </legend>
+                    <p id="recommendationParagraph"></p>
+                    <canvas id="priceComparisonChart"></canvas>
+                    <button id="refreshButton">Afficher</button>
+                    <button id="resetButton">Réinitialiser</button>
+
+                </fieldset>
+                </form>
+
        
         <footer>
             <div class="footer_Copyright">

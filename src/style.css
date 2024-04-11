@@ -801,6 +801,9 @@ header{
   
 #HeaderSimulator {
     color: #003b4d;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     /*font-family: vista sans, titillium web, arial, sans-serif;*/
     font-size: 40px;
     font-weight: bold;
@@ -820,7 +823,7 @@ body {
     animation: H1Ani forwards 1s ease;  
     animation-delay: 1s;
     position: relative;
-    background-image: url('logos/blueBlack2.jpeg');
+    background-image: url('logos/carComparateur.jpg');
     background-size: cover; /* Couvrir toute la surface du conteneur */
     background-position: center; /* Centrer l'image horizontalement et verticalement */
     background-repeat: no-repeat; /* Ne pas répéter l'image si le conteneur est plus grand */
@@ -855,7 +858,7 @@ footer {
     display: block;
     background-color: #719fee;
     border-radius: 10px;
-    border: 4px double #1f69ec;
+    /*border: 4px double #1f69ec;*/
     color: #ffffff;
     text-align: center;
     font-size: 20px;
@@ -880,7 +883,7 @@ footer {
     display: block;
     background-color: #719fee;
     border-radius: 10px;
-    border: 4px double #1f69ec;
+    /*border: 4px double #1f69ec;*/
     color: #ffffff;
     text-align: center;
     font-size: 20px;
@@ -901,7 +904,186 @@ footer {
     font-size: 22px;
 }
 #affichage {
-    background-color: rgba(139, 194, 246, 0.7); /* Couleur blanche avec une opacité de 70% */
+   /* background-color: rgba(139, 194, 246, 0.7);*/ /* Couleur blanche avec une opacité de 70% */
+   background-color: #335d69;
     backdrop-filter: blur(10px); /* Appliquer un flou */
     padding: 20px; /* Ajouter un peu de marge intérieure pour plus d'espace */
 }
+
+/***************************************************************************/
+.tailleVehicule{
+    display: flex;
+    justify-content: center;
+}
+.tailleVehicule label{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: #353349;    
+}
+/***************************************************************************/
+.div_option_abonnement{
+    display: flex;
+    justify-content: center;
+}
+.div_option_abonnement div{
+    margin: 30px;
+}
+.div_option_abonnement label{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: #353349; 
+}
+/***************************************************************************/
+.div_start_end_date_time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.div_start_end_date_time label{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: #353349;   
+}
+.div_start_end_date_time input{
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    padding: 15px;
+}
+/***************************************************************************/
+.div_p_out_distance{
+    display: flex;
+    /*margin-left: 400px;*/
+    justify-content: center;
+}
+.div_p_out_distance p{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: #353349;
+}
+.div_p_out_distance input{
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-right: 10px; 
+    
+}
+/***********************ciTiz********************************/
+.btn_affiche_prix_citz{
+    display: block;
+    right: 2px;
+    background-color: #719fee;
+    border-radius: 10px;
+    color: #bcb9e3;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;   
+}
+.btn_affiche_prix_citz:hover{
+    background-color: #ffffff;
+    border: 2px solid #1f69ec;
+    box-shadow: 10px 5px 5px #719fee;
+    color: #1f69ec;
+    text-align: center;
+    font-size: 22px;
+}
+.div_p_out_btn_citiz{
+    display: flex;
+    /*margin-left: 400px;*/
+    justify-content: center;
+}
+.div_p_out_btn_citiz p{
+    text-align: center;
+    padding-top: 15px;
+    color: #353349;
+}
+.div_p_out_btn_citiz output{
+    text-align: center;
+    padding-top: 12px;
+    margin: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #bcb9e3;
+}
+/********************LeOgo********************************/
+.btn_affiche_prix_leoGo{
+    display: block;
+    right: 2px;
+    background-color: #719fee;
+    border-radius: 10px;
+    color: #bcb9e3;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}.btn_affiche_prix_leoGo:hover{
+    background-color: #ffffff;
+    border: 2px solid #1f69ec;
+    box-shadow: 10px 5px 5px #719fee;
+    color: #1f69ec;
+    text-align: center;
+    font-size: 22px;
+}
+.div_p_output_btn{
+    display: flex;
+    /*margin-left: 400px;*/
+    justify-content: center;
+}
+.div_p_output_btn p{
+    text-align: center;
+    padding-top: 15px;
+    color: #353349;
+}
+.div_p_output_btn output{
+    text-align: center;
+    padding-top: 12px;
+    margin: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #bcb9e3;
+}
+/****************************************************/
+.btnAfficheReset{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+/****************************************************/
+
+
+/****************************************************/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+/****************************************************/

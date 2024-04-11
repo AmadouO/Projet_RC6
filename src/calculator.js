@@ -186,91 +186,13 @@ function calculatePriceLeoAndGo2(carSize, rentalDurationInHours) {
 
     return totalPrice;
 }
-/*
-function calculatePriceLeoAndGo(carSize, rentalDurationInHours) {
-    var totalPrice;
-
-    // Utiliser un switch pour déterminer la taille de la voiture et calculer le prix en conséquence
-    switch (carSize) {
-        case '1':
-        case '2':
-        case '3':
-            switch (rentalDurationInHours) {
-                case 0.01667: // 1 minute
-                    totalPrice = 0.32;
-                    break;
-                case 0.5: // 30 minutes
-                    totalPrice = 7.5;
-                    break;
-                case 1:
-                    totalPrice = 13;
-                    break;
-                case 3:
-                    totalPrice = 27;
-                    break;
-                case 6:
-                    totalPrice = 42;
-                    break;
-                case 9:
-                    totalPrice = 53;
-                    break;
-                case 24:
-                    totalPrice = 65;
-                    break;
-                case 48:
-                    totalPrice = 119;
-                    break;
-                default:
-                    totalPrice = 0;
-                    break;
-            }
-            break;
-        case '4':
-            switch (rentalDurationInHours) {
-                case 0.01667: // 1 minute
-                    totalPrice = 0.39;
-                    break;
-                case 3:
-                    totalPrice = 39;
-                    break;
-                case 6:
-                    totalPrice = 59;
-                    break;
-                case 24:
-                    totalPrice = 79;
-                    break;
-                case 48:
-                    totalPrice = 149;
-                    break;
-                case 72:
-                    totalPrice = 209;
-                    break;
-                default:
-                    totalPrice = 0;
-                    break;
-            }
-            break;
-        default:
-            totalPrice = 0; // Si la taille de la voiture n'est pas valide, le prix est de 0
-            break;
-    }
-
-    return totalPrice;
-}*/
-/*function calculateAndDisplayPriceLeoGO() {
-    var carSize = getCarSize();
-    var rentalDurationInHours = getRentalDurationInHours();
-    var price= calculatePriceLeoAndGo(carSize, rentalDurationInHours);
-    var distance = getDistance()
-    // Afficher le prix calculé
-    displayPrice(price);
-}*/
 
 
 // Fonction pour créer et ajouter un bouton au DOM
 function createCalculateButton() {
     // Créer un élément bouton
     var button = document.createElement('button');
+    button.classList.add('btn_affiche_prix_citz');
     button.textContent = 'Afficher le prix';
 
     // Ajouter un écouteur d'événements au bouton pour calculer le prix et l'afficher
@@ -284,7 +206,10 @@ function createCalculateButton() {
     });
     // Ajouter le bouton au DOM
     var container = document.getElementById('overlay-simulator-result');
-    container.appendChild(button);
+    //container.appendChild(button);
+
+    const div_cont_Acitiz = container.querySelector('.div_p_out_btn_citiz');
+    div_cont_Acitiz.appendChild(button);
 }
 // Appel de la fonction pour créer et ajouter le bouton au chargement de la page
 window.addEventListener('load', createCalculateButton);
@@ -294,6 +219,7 @@ window.addEventListener('load', createCalculateButton);
 function createCalculateButton2() {
     // Créer un élément bouton
     var button = document.createElement('button');
+    button.classList.add('btn_affiche_prix_leoGo');
     button.textContent = 'Afficher le prix';
 
     // Ajouter un écouteur d'événements au bouton pour calculer le prix et l'afficher
@@ -308,7 +234,12 @@ function createCalculateButton2() {
 
     // Ajouter le bouton au DOM
     var container2 = document.getElementById('overlay-simulator-result2');
-    container2.appendChild(button);
+    //container2.appendChild(button);
+
+    const div_cont = container2.querySelector('.div_p_output_btn');
+    div_cont.appendChild(button);
+
+    
 }
 
 // Appel de la fonction pour créer et ajouter le bouton au chargement de la page
@@ -320,13 +251,39 @@ window.addEventListener('load', createCalculateButton2);
 function afficherGraphique() {
     var citizPrice = calculatePrice(getCarSize(), getRentalDurationInHours());
     var leoGoPrice = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours());
+    let rentalDurationInHours = getRentalDurationInHours();
+    let distance = getDistance();
+
+    const table = document.getElementById('tarifsTable');
+    while(table.rows.length > 1){
+        table.deleteRow(1);
+    }
+    var row = tarifsTable.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.textContent = 'Citiz';
+    cell2.textContent = rentalDurationInHours.toFixed(2);
+    cell3.textContent = distance;
+    cell4.textContent = citizPrice.toFixed(2) + ' €';
+    
+    row = tarifsTable.insertRow(2);
+    cell1 = row.insertCell(0);
+    cell2 = row.insertCell(1);
+    cell3 = row.insertCell(2);
+    cell4 = row.insertCell(3);
+    cell1.textContent = 'Leo&Go';
+    cell2.textContent = rentalDurationInHours.toFixed(2);
+    cell3.textContent = distance;
+    cell4.textContent = leoGoPrice.toFixed(2) + ' €';
 
     // Contexte du graphique
     var ctx = document.getElementById('priceComparisonChart').getContext('2d');
 
     // Créer le graphique
     var priceComparisonChart = new Chart(ctx, {
-        type: 'bar', // Type de graphique : barres
+        type: 'doughnut', // Type de graphique : barres
         data: {
             labels: ['Citiz', 'Leo&Go'], // Étiquettes des barres
             datasets: [{
@@ -355,6 +312,7 @@ function afficherGraphique() {
     });
 
     var recommendationParagraph = document.getElementById('recommendationParagraph');
+    
 
     // Recommander le prix le plus bas
     var lowestPrice = Math.min(citizPrice, leoGoPrice);
@@ -412,65 +370,6 @@ resetButton.addEventListener('click', function() {
     // Effacez également le paragraphe de recommandation
     var recommendationParagraph = document.getElementById('recommendationParagraph');
     recommendationParagraph.textContent = '';
+    
 
-    // Ensuite, vous pouvez réinitialiser d'autres éléments de l'interface utilisateur si nécessaire
 });
-
-/*
-var citizPrice = calculatePrice(getCarSize(), getRentalDurationInHours()); 
-var leoGoPrice = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours())
-
-        // Contexte du graphique
-        var ctx = document.getElementById('priceComparisonChart').getContext('2d');
-
-        // Créer le graphique
-        var priceComparisonChart = new Chart(ctx, {
-            type: 'bar', // Type de graphique : barres
-            data: {
-                labels: ['Citiz', 'Leo&Go'], // Étiquettes des barres
-                datasets: [{
-                    label: 'Prix de location de voiture', // Légende du graphique
-                    data: [citizPrice, leoGoPrice], // Données des prix
-                    backgroundColor: [ // Couleurs de fond des barres
-                        'rgba(255, 99, 132, 0.2)', // Couleur pour Citiz
-                        'rgba(54, 162, 235, 0.2)' // Couleur pour Leo&Go
-                    ],
-                    borderColor: [ // Couleurs des bordures des barres
-                        'rgba(255, 99, 132, 1)', // Couleur pour Citiz
-                        'rgba(54, 162, 235, 1)' // Couleur pour Leo&Go
-                    ],
-                    borderWidth: 1 // Largeur de bordure des barres
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true // Commencer l'axe y à 0
-                        }
-                    }]
-                }
-            }
-        });
-
-        var recommendationParagraph = document.getElementById('recommendationParagraph');
-
-        // Recommander le prix le plus bas
-        var lowestPrice = Math.min(citizPrice, leoGoPrice);
-        if (lowestPrice === citizPrice) {
-            recommendationParagraph.textContent = 'Nous vous recommandons de choisir Citiz pour le prix le plus bas.';
-        } else {
-            recommendationParagraph.textContent = 'Nous vous recommandons de choisir Leo&Go pour le prix le plus bas.';
-        }
-
-      /*  var lowestPrice = Math.min(citizPrice, leoGoPrice);
-        if (lowestPrice === citizPrice) {
-            console.log('Nous vous recommandons de choisir Citiz pour le prix le plus bas.');
-        } else {
-            console.log('Nous vous recommandons de choisir Leo&Go pour le prix le plus bas.');
-        }
-
-        document.getElementById('refreshButton').addEventListener('click', function() {
-            window.location.reload();
-        });
-        */

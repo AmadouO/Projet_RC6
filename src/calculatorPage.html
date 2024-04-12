@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Inclure la bibliothèque Chart.js -->
+    <!-- Inclusion de la bibliothèque Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>RC6</title>
-    <!-- ..................Custom Css Link................... -->
     <link rel="stylesheet" href="./style.css">
     
 </head>
 <body>
-         <!-- ..................Start Navbar................... -->
          <nav>
             <div class="logo">Edells & Maslak</div>
         <div class="hamburger">
@@ -30,23 +27,15 @@
                     <a href="calculatorPage.html"> Calculateur de trajets</a>
                 </li>
                 <li>
-                    <a href=""> Graphiques</a>
-                </li>
-                <li>
                     <a href="MonCompte.html"> Mon Compte</a>
-                    <!--
-                    <button>Mon Compte</button>
-                    -->
                 </li>
                 
             </ul>
         </div>
            
         </nav>
-        <!-- ..................End Navbar................... -->
     </div>    
         
-         <!--choix de la taille du vehicule-->
          <div id="overlay-simulator">
             <h1 id="HeaderSimulator">Simulateur de tarif</h1>
             <form>
@@ -80,7 +69,6 @@
                     </div>
                 </fieldset>
 
-                <!----------------------------------CHOIX Avec Abonnement et Sans abonnement ---------------------------------->
                 <fieldset id="subscription-options">
                     <legend>Options d'abonnement</legend>
                     <div class="div_option_abonnement">
@@ -96,7 +84,6 @@
                 </fieldset>
                 
 
-                <!--durée de location date aller et retour-->
                 <fieldset id="rental-dates">
                     <legend>Dates de location</legend>
                     <div class="div_start_end_date_time">
@@ -111,7 +98,6 @@
                     </div>
                 </fieldset>
 
-                <!----------------------------------------------------la distance------------------------------------------->
               <fieldset id="overlay-simulator-distance">
                   <legend>Distance km (optionnel)</legend>
                   <div class="div_p_out_distance">
@@ -119,7 +105,6 @@
                   <input type="number" id="estimate_km" name="estimate[km]" required="required" min="1" value="1" />
                   </div>
               </fieldset>
-              <!------------------------------------------------ tarif final --------------------------------------->
             <fieldset id="overlay-simulator-result">
                 <legend>Le prix selon Citiz est  :</legend>
                 <div class="div_p_out_btn_citiz">

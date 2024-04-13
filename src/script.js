@@ -5,10 +5,15 @@ const login_link = document.querySelector('.login_link');
 const resister_link = document.querySelector('.resister_link');
 const btn_login = document.querySelector('.btn_login');
 const icon_close = document.querySelector('.icon_close');
+const header = document.querySelector('header');
+const section = document.querySelector('.sec');
 
 
 hamburger.addEventListener('click', () =>{
-    nav_bar.classList.toggle("acitve")
+    nav_bar.classList.toggle("acitve");
+    header.classList.toggle('move_down');
+    section.classList.toggle('move_down');
+
 })
 
 window.addEventListener('scroll', () =>{
@@ -36,4 +41,6 @@ btn_login.addEventListener('click', () =>{
 icon_close.addEventListener('click', () =>{
     wrapper.classList.remove('active-popup');
 });
+
+
 

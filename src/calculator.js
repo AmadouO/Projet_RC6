@@ -1,16 +1,13 @@
-/**
- * MASLAK calculatorPage JS
- */
 function getDistance() {
-    var distance = parseInt(document.getElementById('estimate_km').value);
+    let distance = parseInt(document.getElementById('estimate_km').value);
     return distance;
 }
 
 function getType() {
-    var type;
-    var radios = document.getElementsByName('estimate[type]');
+    let type;
+    let radios = document.getElementsByName('estimate[type]');
     
-    for (var i = 0; i < radios.length; i++) {
+    for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             type = radios[i].value;
             break;
@@ -21,15 +18,15 @@ function getType() {
 }
 
 function getCarSize() {
-    var carSize = document.querySelector('input[name="car"]:checked').value;
+    let carSize = document.querySelector('input[name="car"]:checked').value;
     return carSize;
 }
 
 function getSubscriptionType() {
-    var subscriptionType;
-    var radios = document.getElementsByName('subscription');
+    let subscriptionType;
+    let radios = document.getElementsByName('subscription');
     
-    for (var i = 0; i < radios.length; i++) {
+    for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             subscriptionType = radios[i].value;
             break;
@@ -41,22 +38,20 @@ function getSubscriptionType() {
 
 /************Fonction pour calculer la durée de location en heures**********************************/
 function getRentalDurationInHours() {
-    // Récupérer les valeurs de date et d'heure de début et de fin
-    var startDate = new Date(document.getElementById('start-date').value);
-    var endDate = new Date(document.getElementById('end-date').value);
+    let startDate = new Date(document.getElementById('start-date').value);
+    let endDate = new Date(document.getElementById('end-date').value);
 
-    // Calculer la différence entre les dates en millisecondes
-    var timeDifference = endDate.getTime() - startDate.getTime();
+    let timeDifference = endDate.getTime() - startDate.getTime();
 
     // Convertir la différence en heures
-    var rentalDurationInHours = timeDifference / (1000 * 60 * 60);
+    let rentalDurationInHours = timeDifference / (1000 * 60 * 60);
 
     // Retourner la durée de location en heures
     return rentalDurationInHours;
 }
 /*************************** fonction tarif pour citiz en utilisant heure*tarif ***********************************/
 function calculatePriceWithSubscription(carSize, rentalDurationInHours) {
-    var pricePerHour;
+    let pricePerHour;
     switch (carSize) {
         case '1':
             pricePerHour = 2.5;
@@ -75,12 +70,12 @@ function calculatePriceWithSubscription(carSize, rentalDurationInHours) {
             break;
     }
     
-    var totalPrice = pricePerHour * rentalDurationInHours;
+    let totalPrice = pricePerHour * rentalDurationInHours;
     return totalPrice;
 }
 
 function calculatePriceWithoutSubscription(carSize, rentalDurationInHours) {
-    var pricePerHour;
+    let pricePerHour;
     switch (carSize) {
         case '1':
             pricePerHour = 5;
@@ -99,12 +94,12 @@ function calculatePriceWithoutSubscription(carSize, rentalDurationInHours) {
             break;
     }
     
-    var totalPrice = pricePerHour * rentalDurationInHours;
+    let totalPrice = pricePerHour * rentalDurationInHours;
     return totalPrice;
 }
 
 function calculatePrice(carSize, rentalDurationInHours) {
-    var subscriptionType = getSubscriptionType();
+    let subscriptionType = getSubscriptionType();
     if (subscriptionType === 'avec_abonnement') {
         return calculatePriceWithSubscription(carSize, rentalDurationInHours);
     } else if (subscriptionType === 'sans_abonnement') {
@@ -113,32 +108,26 @@ function calculatePrice(carSize, rentalDurationInHours) {
 }
 
 function displayPrice(totalPrice) {
-    var outputElement = document.getElementById('estimate_price');
+    let outputElement = document.getElementById('estimate_price');
     outputElement.value = totalPrice.toFixed(2);
 }
 function displayPrice2(totalPrice) {
-    var outputElement = document.getElementById('estimate_price2');
+    let outputElement = document.getElementById('estimate_price2');
     outputElement.value = totalPrice.toFixed(2);
 }
 
 function calculateAndDisplayPrice() {
-    var carSize = getCarSize();
-    var rentalDurationInHours = getRentalDurationInHours();
-    var price = calculatePrice(carSize, rentalDurationInHours);
-    var distance = getDistance()
+    let carSize = getCarSize();
+    let rentalDurationInHours = getRentalDurationInHours();
+    let price = calculatePrice(carSize, rentalDurationInHours);
+    let distance = getDistance()
     displayPrice(price);
 }
 
 
-/******************************************************************************
- * Maslak CalculatorPage JS citiz  FIN
- ******************************************************************************/
-
-/****************************** *
- * Maslak Calculator page pour Leo&Go 
-************************************/
+/******************************************************************************/
 function calculatePriceLeoAndGo2(carSize, rentalDurationInHours) {
-    var totalPrice = 0;
+    let totalPrice = 0;
 
     // Utiliser un switch pour déterminer la taille de la voiture et calculer le prix en conséquence
     switch (carSize) {
@@ -161,8 +150,8 @@ function calculatePriceLeoAndGo2(carSize, rentalDurationInHours) {
                 totalPrice = 119;
             } else {
                 // Calculer les jours et les heures restants
-                var days = Math.floor(rentalDurationInHours / 24);
-                var hours = rentalDurationInHours % 24;
+                let days = Math.floor(rentalDurationInHours / 24);
+                let hours = rentalDurationInHours % 24;
                 
                 // Calculer le prix pour chaque jour
                 totalPrice += days * 65;
@@ -180,7 +169,7 @@ function calculatePriceLeoAndGo2(carSize, rentalDurationInHours) {
             }
             break;
         default:
-            totalPrice = 0; // Si la taille de la voiture n'est pas valide, le prix est de 0
+            totalPrice = 0; // Si la taille de la voiture n'est pas valide le prix est de 0
             break;
     }
 
@@ -190,24 +179,17 @@ function calculatePriceLeoAndGo2(carSize, rentalDurationInHours) {
 
 // Fonction pour créer et ajouter un bouton au DOM
 function createCalculateButton() {
-    // Créer un élément bouton
-    var button = document.createElement('button');
+    let button = document.createElement('button');
     button.classList.add('btn_affiche_prix_citz');
     button.textContent = 'Afficher le prix';
 
-    // Ajouter un écouteur d'événements au bouton pour calculer le prix et l'afficher
     button.addEventListener('click', function(event) {
-        // Empêcher le rechargement de la page
         event.preventDefault();
-        // Calculer le prix
-        var price = calculatePrice(getCarSize(), getRentalDurationInHours());
-        // Afficher le prix directement dans le document
+        let price = calculatePrice(getCarSize(), getRentalDurationInHours());
         displayPrice(price);
     });
     // Ajouter le bouton au DOM
-    var container = document.getElementById('overlay-simulator-result');
-    //container.appendChild(button);
-
+    let container = document.getElementById('overlay-simulator-result');
     const div_cont_Acitiz = container.querySelector('.div_p_out_btn_citiz');
     div_cont_Acitiz.appendChild(button);
 }
@@ -217,40 +199,32 @@ window.addEventListener('load', createCalculateButton);
 /**********************************************boutton leo&Go ************************** ***/ 
 // Fonction pour créer et ajouter un bouton au DOM
 function createCalculateButton2() {
-    // Créer un élément bouton
-    var button = document.createElement('button');
+    let button = document.createElement('button');
     button.classList.add('btn_affiche_prix_leoGo');
     button.textContent = 'Afficher le prix';
 
-    // Ajouter un écouteur d'événements au bouton pour calculer le prix et l'afficher
     button.addEventListener('click', function(event) {
-        // Empêcher le rechargement de la page
         event.preventDefault();
         
-        // Calculer le prix
-        var price = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours());
+        let price = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours());
         displayPrice2(price);
     });
 
-    // Ajouter le bouton au DOM
-    var container2 = document.getElementById('overlay-simulator-result2');
-    //container2.appendChild(button);
+    let container2 = document.getElementById('overlay-simulator-result2');
 
     const div_cont = container2.querySelector('.div_p_output_btn');
     div_cont.appendChild(button);
 
-    
 }
 
 // Appel de la fonction pour créer et ajouter le bouton au chargement de la page
 window.addEventListener('load', createCalculateButton2);
 
-/*** Creation des courbes */
 
 // Créez une fonction pour afficher le graphique
 function afficherGraphique() {
-    var citizPrice = calculatePrice(getCarSize(), getRentalDurationInHours());
-    var leoGoPrice = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours());
+    let citizPrice = calculatePrice(getCarSize(), getRentalDurationInHours());
+    let leoGoPrice = calculatePriceLeoAndGo2(getCarSize(), getRentalDurationInHours());
     let rentalDurationInHours = getRentalDurationInHours();
     let distance = getDistance();
 
@@ -258,11 +232,11 @@ function afficherGraphique() {
     while(table.rows.length > 1){
         table.deleteRow(1);
     }
-    var row = tarifsTable.insertRow(1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
+    let row = tarifsTable.insertRow(1);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    let cell4 = row.insertCell(3);
     cell1.textContent = 'Citiz';
     cell2.textContent = rentalDurationInHours.toFixed(2);
     cell3.textContent = distance;
@@ -279,43 +253,43 @@ function afficherGraphique() {
     cell4.textContent = leoGoPrice.toFixed(2) + ' €';
 
     // Contexte du graphique
-    var ctx = document.getElementById('priceComparisonChart').getContext('2d');
+    let ctx = document.getElementById('priceComparisonChart').getContext('2d');
 
-    // Créer le graphique
-    var priceComparisonChart = new Chart(ctx, {
-        type: 'doughnut', // Type de graphique : barres
+    // Creer le graphique
+    let priceComparisonChart = new Chart(ctx, {
+        type: 'doughnut', 
         data: {
             labels: ['Citiz', 'Leo&Go'], // Étiquettes des barres
             datasets: [{
                 label: 'Prix de location de voiture', // Légende du graphique
-                data: [citizPrice, leoGoPrice], // Données des prix
-                backgroundColor: [ // Couleurs de fond des barres
-                'rgba(238, 130, 238, 0.2)', // Couleur pour Citiz (rose foncé)
-                'rgba(30, 144, 255, 0.2)' // Couleur pour Leo&Go (bleu foncé)
+                data: [citizPrice, leoGoPrice], 
+                backgroundColor: [ 
+                'rgba(238, 130, 238, 0.2)', 
+                'rgba(30, 144, 255, 0.2)' 
             ],
-            borderColor: [ // Couleurs des bordures des barres
-                'rgba(238, 130, 238, 1)', // Couleur pour Citiz (rose foncé)
-                'rgba(30, 144, 255, 1)' // Couleur pour Leo&Go (bleu foncé)
+            borderColor: [ 
+                'rgba(238, 130, 238, 1)',
+                'rgba(30, 144, 255, 1)' 
             ],
-                borderWidth: 1 // Largeur de bordure des barres
+                borderWidth: 1 
             }]
         },
         options: {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true // Commencer l'axe y à 0
+                        beginAtZero: true 
                     }
                 }]
             }
         }
     });
 
-    var recommendationParagraph = document.getElementById('recommendationParagraph');
+    let recommendationParagraph = document.getElementById('recommendationParagraph');
     
 
     // Recommander le prix le plus bas
-    var lowestPrice = Math.min(citizPrice, leoGoPrice);
+    let lowestPrice = Math.min(citizPrice, leoGoPrice);
     if (lowestPrice === citizPrice) {
         recommendationParagraph.textContent = 'Nous vous recommandons de choisir Citiz pour le prix le plus bas.';
     } else {
@@ -323,26 +297,21 @@ function afficherGraphique() {
     }
 }
 
-// Récupérez le bouton "Afficher"
-var refreshButton = document.getElementById('refreshButton');
+// Recuperez le bouton "Afficher"
+let refreshButton = document.getElementById('refreshButton');
 
-// Ajoutez un gestionnaire d'événements au bouton "Afficher"
 refreshButton.addEventListener('click', function(event) {
-    // Empêchez le comportement par défaut (rechargement de la page)
     event.preventDefault();
-
-    // Appelez la fonction pour afficher le graphique
     afficherGraphique();
 });
 
 
-// Sélectionnez le bouton de réinitialisation
-var resetButton = document.getElementById('resetButton');
+// Selectionnez le bouton de réinitialisation
+let resetButton = document.getElementById('resetButton');
 
-// Ajoutez un écouteur d'événements au bouton de réinitialisation
 resetButton.addEventListener('click', function() {
     // Obtenez le contexte du graphique
-    var ctx = document.getElementById('priceComparisonChart').getContext('2d');
+    let ctx = document.getElementById('priceComparisonChart').getContext('2d');
 
     // Effacez le graphique actuel
     if (window.priceComparisonChart !== undefined) {
@@ -368,8 +337,6 @@ resetButton.addEventListener('click', function() {
     });
 
     // Effacez également le paragraphe de recommandation
-    var recommendationParagraph = document.getElementById('recommendationParagraph');
+    let recommendationParagraph = document.getElementById('recommendationParagraph');
     recommendationParagraph.textContent = '';
-    
-
 });

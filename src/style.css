@@ -14,31 +14,37 @@
     --color-black: #222; 
 }
 .btn{
-    display: inline-block;
-    width: fit-content;
-    padding: 12px 28px;
+    width: 620px;
+   /*max-width: 200px;*/
     background: var(--color-primary);
     border: 2px solid var(--color-primary);
     border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: var(--color-white);
-    letter-spacing: .4px;
-    font-weight: 600;
     transition: .4s ease;
     opacity: 0;
     animation: logoAni 1s ease forwards; 
     animation-delay: 1.3s;
 }
+
 .btn:hover{
     background: transparent;
     color: var(--color-primary);
 }
+@media only screen and (max-width: 900px) {
+    .btn {
+        max-width: 200px; 
+    }
+}
+
 .container{
     max-width: 1620px;
     width: 90%;
     margin: 0 auto;
 }
 /*-------------------Mises en style de la bare de navigation -------------------*/
+.move_down{
+    transform: translateY(30%);
+}
 nav{
     width: 100%;
     height: 100px;
@@ -121,7 +127,7 @@ nav{
         overflow: hidden;
     }
     .nav_bar.acitve{
-        height: 450px;
+        height: 250px;
     }
     .nav_bar ul {
         display: block;
@@ -137,6 +143,7 @@ nav{
     .nav_bar ul li a{
         margin-bottom: 12px;
         
+    
     }
 }
 /*-----------------------Fin du Mises en style de la bare de navigation------- */
@@ -153,9 +160,9 @@ header{
     padding: 60px;
 }
 
-.header-left{
+.header-left p{
     max-width: 620px;
-    position: relative;
+    /*position: relative;*/
 }
 
 .header-left h1{
@@ -233,6 +240,15 @@ header{
     opacity: 0;
     animation: sqbox2Ani forwards 1s ease;
     animation-delay: .3s;
+}
+@media only screen and (max-width: 900px) {
+    .sq-box{
+        transform: translateY(40%);
+    }
+    .header-left h3{
+        color: #000000;
+    }
+
 }
 /* .......................Fin de Mise en style du Section Header...................... */
 
@@ -333,10 +349,13 @@ header{
     justify-content: center;
     color: white;
 }
+.mes_Carte span{
+    color: #000000;
+}
 
 .card {
     width: 300px;
-    border: 1px solid #ccc;
+    border: 1px solid #6b2626;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
@@ -345,7 +364,7 @@ header{
 
 .card-image-container {
     overflow: hidden;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #6b2626;
     position: relative; 
 }
 
@@ -367,6 +386,7 @@ header{
 .card-title {
     font-size: 18px;
     margin-top: 0;
+    color: #11101b;
 }
 
 .card-description {
